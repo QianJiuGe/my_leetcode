@@ -51,17 +51,38 @@ public class T21_MergeTwoSortedLists{
     //leetcode submit region begin(Prohibit modification and deletion)
 /**
  * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
+ * */
+  public class ListNode {
+      int val;
+      ListNode next;
+      ListNode() {}
+      ListNode(int val) { this.val = val; }
+      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+  }
+
 class Solution {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 
+        ListNode node = new ListNode(0,null);
+        ListNode res = node;
+
+        while(l1!=null && l2!=null){
+            //谁小谁先放
+            if(l1.val>l2.val){
+                node.next = l2;
+                l2 = l2.next;
+            }else{
+                node.next = l1;
+                l1 = l1.next;
+            }
+            node = node.next;
+        }
+        if(l1!=null)
+            node.next = l1;
+        if(l2!=null)
+            node.next = l2;
+
+        return res.next;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
