@@ -54,16 +54,21 @@ public class T7_ReverseInteger{
     public static void main(String[] args) {
         Solution solution = new T7_ReverseInteger().new Solution();
         // TO TEST
+        int i = solution.reverse(-125 );
+        System.out.println(i);
     }
     
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int reverse(int x) {
-
-
-        return 0;
+    class Solution {
+        public int reverse(int x) {
+            long res = 0;
+            while(x!=0){
+                res =res*10 + x%10;
+                x= x/10;
+            }
+            return (int)res==res?(int)res:0;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
