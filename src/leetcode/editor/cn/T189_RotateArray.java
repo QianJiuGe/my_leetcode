@@ -63,13 +63,8 @@ public class T189_RotateArray{
 class Solution {
     public void rotate(int[] nums, int k) {
         int len = nums.length;
-        int start =  k%len;
-        int pos = 0;
-        while(pos < len){
-            int temp =
-            pos++;
-            start++;
-        }
+        int move =  k%len;
+
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
