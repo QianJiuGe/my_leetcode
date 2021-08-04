@@ -64,7 +64,7 @@ public class T2_AddTwoNumbers{
 
     //leetcode submit region begin(Prohibit modification and deletion)
 
-    static class ListNode {
+    public static class ListNode {
         int val;
         ListNode next;
 
